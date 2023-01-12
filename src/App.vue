@@ -1,8 +1,7 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import ControlPanel from './views/ControlPanel.vue'
+  import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <ControlPanel />
+  <RouterView></RouterView>
 </template>

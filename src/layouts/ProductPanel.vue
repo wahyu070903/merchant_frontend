@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col w-full bg-slate-300 py-8">
-        <div class="flex flex-row items-center justify-center w-full bg-green-100">
+    <div class="flex flex-col w-full py-8">
+        <div class="flex flex-row items-center justify-center w-full">
             <form class="w-2/4">   
                 <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                 <div class="relative">
@@ -61,12 +61,13 @@
                                 {{ item.price }}
                             </td>
                             <td class="py-4 px-6 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <RouterLink :to="`/edit/${item.id}`" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</RouterLink>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <Paginate :visiblePage="5"/>
         </div>
     </div>
 </template>
@@ -76,10 +77,19 @@
     export default {
         data() {
             return {
-                fetchresult : null
+                fetchresult : null,
             }
         },
         mounted(){
+            axios.get('http://127.0.0.1:8000/api/product/count')
+                .then(result => {
+                    this.countOfData = result.data.message
+                    if((this.countOfData / this.dataPerPage) > 10){
+                        this.pagginateNumber = 10
+                    }else{
+                        this.pagginateNumber = this.countOfData / this.dataPerPage
+                    }
+                })
             axios.get('http://127.0.0.1:8000/api/product/getrange/1/10')
                 .then(result => {
                     console.log(result)
@@ -88,6 +98,9 @@
                 .catch(error =>{
                     console.log(error)
                 })
+        },
+        methods : {
+
         }
     }
 </script>
