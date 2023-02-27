@@ -1,11 +1,3 @@
-<script>
-  import ProductCarousel from '../components/ProductCarousel.vue'
-  export default {
-    components : {
-      ProductCarousel
-    }
-  }
-</script>
 <template>
   <div class="announcement h-12 w-full flex flex-row justify-center items-center bg-gray-100">
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" /></svg>
@@ -71,6 +63,118 @@
     <ProductCarousel/>
     <div class="info-card w-[28rem] h-full ml-4">
       <p class="text-xl font-bold text-gray-800">Custom Tshirt print by local people</p>
+      <p class="text-sm font-light text-gray-600">Some description for your product, type what you like whatever you want.</p>
+      <div class="flex flex-row items-center mt-2">
+        <img class="w-5 h-5 mx-1" src="../assets/icons/star.png" v-for="n in starRating">
+        <img class="w-5 h-5 mx-1" src="../assets/icons/unstar.png" v-for="n in (5 - starRating)">
+        <p class="mx-2 font-light text-sm text-gray-800">{{ peopleLike }} People Like This</p>
+      </div>
+      <div class="flex flex-row items-center w-full h-24 mt-4 rounded-sm bg-gray-200">
+        <img class="w-16 h-16 mx-4" src="../assets/icons/megaphone.png" alt="megaphone">
+        <p class="font-light text-sm ml-2 mr-4">This Is Anouncement, Place Something Intersting Here and Make Your Website More Expresive.</p>
+      </div>
+      <div class="mt-4">
+        <p class="font-bold text-sm text-gray-800">Color You Want</p>
+        <div class="flex flex-row items-center mt-2">
+          <div v-for="color in selectableColors" class="w-5 h-5 rounded-sm mr-2" :style="{'background-color' : color}"></div>
+        </div>
+      </div>
+      <div class="mt-6">
+        <p class="font-bold text-sm text-gray-800">Size Fit On You</p>
+        <div class="flex flex-row items-center mt-2">
+          <div v-for="size in selectableSize" class="w-8 h-8 rounded-sm border border-gray-400 text-center leading-8 font-bold text-md text-gray-800 mr-2">{{ size }}</div>
+        </div>
+      </div>
+      <div class="flex flex-row mt-8">
+        <div class="rounded-md text-gray-800 bg-gray-200 h-full px-2 py-2">
+          <p class="text-sm font-bold">Prices <span class="text-red-600">*</span></p>
+          <p class="text-xl font-bold ml-2 mt-4">IDR 180K</p>
+          <p class="text-sm font-light ml-2">* Not Include Shipping</p>
+        </div>
+        <div class="rounded-md text-gray-800 bg-gray-200 ml-6 flex flex-col">
+          <p class="text-sm font-bold mx-2 my-2">Estimated Delivery <span class="text-red-600">*</span></p>
+          <div class="flex flex-row items-center mt-4 mx-4 my-6 self-center">
+            <div class="flex flex-col items-center">
+              <p class="text-xs font-light text-gray-800">From</p>
+              <img class="w-12 h-12" src="../assets/icons/country/indonesia.png">
+              <p class="text-sm font-bold text-gray-800">Indonesia</p>
+            </div>
+            <div class="mx-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
+            </div>
+            <div class="flex flex-col items-center">
+              <p class="text-xs font-light text-gray-800">Send To</p>
+              <img class="w-12 h-12" src="../assets/icons/country/japan.png">
+              <p class="text-sm font-bold text-gray-800">Japan</p>
+            </div>
+          </div>
+          <div class="mx-4 mb-6">
+            <div class="relative w-fit">
+              <p class="font-bold text-xl mr-1">Aug 4-8</p>
+              <svg class="w-4 h-4 absolute top-0 -right-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" /></svg>
+            </div>
+            <p class="font-light text-sm">Estimated Shipping Prices IDR 12K</p>
+          </div>
+        </div>
+      </div>
+      <button class="bg-red-600 flex flex-row items-center justify-center w-full rounded-sm mt-4 py-2">
+        <svg class="w-6 h-6 stroke-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
+        <p class="font-bold text-white mx-2">Get This</p>
+      </button>
+    </div>
+  </div>
+  <div class="product_description pl-24 pr-32">
+    <div class="flex flex-row items-center border-b border-gray-400">
+      <button class="px-2 py-2 mr-2 border-x border-t border-gray-400 text-md text-gray-800">Information</button>
+      <button class="px-2 py-2 mr-2 border-x border-t border-gray-400 text-md text-gray-800 bg-gray-100">Description</button>
+      <button class="px-2 py-2 mr-2 border-x border-t border-gray-400 text-md text-gray-800 bg-gray-100">Warranty</button>
+    </div>
+    <div class="font-light text-sm text-gray-800 mt-4 w-4/5">
+      <p>With a large front pouch pocket and drawstrings in a matching color, this Unisex Heavy Blend Hoodie is a sure crowd-favorite. It’s soft, stylish, and perfect for cooler evenings.</p>
+      <ul class="list-disc list-inside ml-10">
+        <li>50% pre-shrunk cotton, 50% polyester</li>
+        <li>Fabric weight: 8.0 oz/yd² (271.25 g/m²)</li>
+        <li>Air-jet spun yarn with a soft feel and reduced pilling</li>
+        <li>Double-lined hood with matching drawcord</li>
+        <li>Quarter-turned body to avoid crease down the middle</li>
+        <li>1 × 1 athletic rib-knit cuffs and waistband with spandex</li>
+        <li>Front pouch pocket</li>
+        <li>Double-needle stitched collar, shoulders, armholes, cuffs, and hem</li>
+        <li>Blank product sourced from Honduras, Mexico, or Nicaragua</li>
+      </ul>
     </div>
   </div>
 </template> 
+
+<script>
+  import ProductCarousel from '../components/ProductCarousel.vue'
+  export default {
+    components : {
+      ProductCarousel
+    }, 
+    data(){
+     return({
+      starRating : 4,
+      peopleLike : 123,
+      selectableColors : {
+        light_blue : "#2596be",
+        black : "#141706",
+        gray : "#9e9e9e",
+        red : "#f00e0e",
+        dark_blue : "#0558f2",
+        yellow : "#f2f205",
+        purple : "#e600ff",
+        orange : "#ff5900",
+        green : "#00ff00"
+      },
+      selectableSize : {
+        extra_small : "XS",
+        small : "S",
+        medium : "M",
+        large : "L",
+        extra_large : "XL",
+      }
+     }) 
+    }
+  }
+</script>

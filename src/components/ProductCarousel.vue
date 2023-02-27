@@ -27,7 +27,7 @@
       </div>
       <div class="large-gallery h-[600px] w-[500px] p-0 mx-4 relative">
         <img class="h-full w-[500px] object-cover" :src="carouselChange">
-        <button class="absolute top-0 right-0 w-8 h-8 bg-gray-700 rounded-md mx-2">
+        <button class="absolute top-0 right-0 w-8 h-8 bg-gray-700 rounded-md mx-2 my-2">
           <svg class="w-6 h-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" /></svg>
         </button>
       </div>
@@ -72,6 +72,7 @@
             carousel.forEach((element,index) =>{
               if(index == this.currentImage){
                 element.classList.add('active-carousel')
+                console.log("aktif cuy")
               }else{
                 element.classList.remove('active-carousel')
               }
