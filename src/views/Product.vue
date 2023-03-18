@@ -144,13 +144,156 @@
       </ul>
     </div>
   </div>
+  <div class="px-20 pt-12 flex flex-row relative">
+    <div class="flex flex-col items-center text-gray-800">
+      <p class="font-bold text-md">User Reviews</p>
+      <div class="flex flex-row mb-2">
+        <img class="w-5 h-5 self-center" src="../assets/icons/star.png">
+        <p class="text-5xl font-light self-center ml-2">4.8</p>
+        <p class="text-xl font-light self-end">/5.0</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="flex flex-row items-center">
+          <img class="w-3 h-3" src="../assets/icons/star.png">
+          <p class="text-sm font-bold ml-1">5</p>
+          <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700 ml-2">
+            <div class="bg-red-600 h-2 rounded-full" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="flex flex-row items-center">
+          <img class="w-3 h-3" src="../assets/icons/star.png">
+          <p class="text-sm font-bold ml-1">4</p>
+          <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700 ml-2">
+            <div class="bg-red-600 h-2 rounded-full" style="width: 45%"></div>
+          </div>
+        </div>
+        <div class="flex flex-row items-center">
+          <img class="w-3 h-3" src="../assets/icons/star.png">
+          <p class="text-sm font-bold ml-1">3</p>
+          <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700 ml-2">
+            <div class="bg-red-600 h-2 rounded-full" style="width: 4%"></div>
+          </div>
+        </div>
+        <div class="flex flex-row items-center">
+          <img class="w-3 h-3" src="../assets/icons/star.png">
+          <p class="text-sm font-bold ml-1">2</p>
+          <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700 ml-2">
+            <div class="bg-red-600 h-2 rounded-full" style="width: 1%"></div>
+          </div>
+        </div>
+        <div class="flex flex-row items-center">
+          <img class="w-3 h-3" src="../assets/icons/star.png">
+          <p class="text-sm font-bold ml-1">1</p>
+          <div class="w-32 bg-gray-200 rounded-full h-2 dark:bg-gray-700 ml-2">
+            <div class="bg-red-600 h-2 rounded-full" style="width: 2%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full mt-4 sticky top-0 border border-gray-400 rounded-md">
+        <div class="w-full py-2 border-b border-gray-400">
+          <div class="flex flex-row items-center justify-between">
+            <p class="font-bold text-md text-gray-800 ml-4">Sort</p>
+            <button class="mr-4 hover:bg-gray-200 hover:rounded-full">
+              <svg class="w-5 h-5 stroke-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+          </div>
+          <div class="px-4 mt-2">
+            <div class="flex flex-row items-center">
+              <input type="checkbox" class=" h-4 w-4 rounded-sm appearance-none border-gray-800 checked:bg-red-500 hover:border-red-500 focus:ring-0">
+              <p class="font-light text-sm ml-1">Recent</p>
+            </div>
+            <div class="flex flex-row items-center">
+              <input type="checkbox" class=" h-4 w-4 rounded-sm appearance-none border-gray-800 checked:bg-red-500 hover:border-red-500 focus:ring-0">
+              <p class="font-light text-sm ml-1">Past</p>
+            </div>
+            <div class="flex flex-row items-center">
+              <input type="checkbox" class=" h-4 w-4 rounded-sm appearance-none border-gray-800 checked:bg-red-500 hover:border-red-500 focus:ring-0">
+              <p class="font-light text-sm ml-1">Most Liked</p>
+            </div>
+            <div class="flex flex-row items-center">
+              <input type="checkbox" class=" h-4 w-4 rounded-sm appearance-none border-gray-800 checked:bg-red-500 hover:border-red-500 focus:ring-0">
+              <p class="font-light text-sm ml-1">Most dislike</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full py-2 flex flex-row items-center justify-between border-b border-gray-400">
+          <p class="font-bold text-md text-gray-800 ml-4">Rating</p>
+          <button class="mr-4 hover:bg-gray-200 hover:rounded-full">
+            <svg class="w-5 h-5 stroke-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+          </button>
+        </div>
+        <div class="w-full py-2 flex flex-row items-center justify-between">
+          <p class="font-bold text-md text-gray-800 ml-4">Other</p>
+          <button class="mr-4 hover:bg-gray-200 hover:rounded-full">
+            <svg class="w-5 h-5 stroke-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="ml-12">
+      <UserReviewCard :rating="3"/>
+      <UserReviewCard :rating="5"/>
+      <UserReviewCard :rating="1"/>
+      <UserReviewCard :rating="5"/>
+      <UserReviewCard :rating="3"/>
+    </div>
+  </div>
+  <div class="w-full h-fit bg-gray-100 mt-20 px-20 pt-12">
+    <div class="flex flex-row items-start">
+      <div class="flex flex-col">
+        <p class="text-md font-bold text-gray-800">About Us</p>
+        <ul class="text-sm font-light text-gray-800">
+          <li class="my-1">LoremIpsum</li>
+          <li class="my-1">About LoremIpsum</li>
+          <li class="my-1">Intelectual Policy</li>
+          <li class="my-1">Our Partners</li>
+        </ul>
+        <p class="text-md font-bold text-gray-800 mt-4">Support</p>
+        <ul class="text-sm font-light text-gray-800">
+          <li class="my-1">FAQ</li>
+          <li class="my-1">Return Policy</li>
+          <li class="my-1">Intelectual Policy</li>
+          <li class="my-1">Privacy Policy</li>
+          <li class="my-1">Accessibility</li>
+          <li class="my-1">Contact Us</li>
+        </ul>
+      </div>
+      <div class="flex flex-col mx-16">
+        <p class="text-md font-bold text-gray-800">Customer Services</p>
+        <ul class="text-sm font-light text-gray-800">
+          <li class="my-1">Quality</li>
+          <li class="my-1">Shipping</li>
+          <li class="my-1">Lorem Ipsum</li>
+          <li class="my-1">Lorem Ipsum</li>
+        </ul>
+        <p class="text-md font-bold text-gray-800 mt-4">Payment</p>
+        <div class="flex flex-row items-center">
+          <img class="h-14 w-auto" src="../assets/icons/payment/paypal.png">
+          <img class="h-12 w-auto ml-2" src="../assets/icons/payment/mastercard.png">
+          <img class="h-12 w-auto ml-2" src="../assets/icons/payment/visa.png">
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <p class="text-md font-bold text-gray-800">Follow Us</p>
+        <div class="flex flex-row items-center mt-2">
+          <img class="w-6 h-6" src="../assets/icons/socialmedia/instagram.png">
+          <img class="w-6 h-6 ml-2" src="../assets/icons/socialmedia/twitter.png">
+          <img class="w-6 h-6 ml-2" src="../assets/icons/socialmedia/facebook.png">
+          <img class="w-6 h-6 ml-2" src="../assets/icons/socialmedia/youtube.png">
+          <img class="w-6 h-6 ml-2" src="../assets/icons/socialmedia/tiktok.png">
+        </div>
+      </div>
+    </div>
+  </div>
 </template> 
 
 <script>
   import ProductCarousel from '../components/ProductCarousel.vue'
+  import UserReviewCard from '../components/UserReview.vue'
   export default {
     components : {
-      ProductCarousel
+      ProductCarousel,
+      UserReviewCard
     }, 
     data(){
      return({
