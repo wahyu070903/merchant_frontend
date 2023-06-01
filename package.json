@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.12",
-    "axios": "^1.2.1",
+    "axios": "^1.4.0",
     "flowbite": "^1.5.5",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
