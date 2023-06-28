@@ -62,7 +62,7 @@
   <div class="product-panel pl-24 pr-32 flex flex-row">
     <ProductCarousel/>
     <div class="info-card w-[28rem] h-full ml-4">
-      <p class="text-xl font-bold text-gray-800">Custom Tshirt print by local people</p>
+      <p class="text-xl font-bold text-gray-800">{{ productName }}</p>
       <p class="text-sm font-light text-gray-600">Some description for your product, type what you like whatever you want.</p>
       <div class="flex flex-row items-center mt-2">
         <img class="w-5 h-5 mx-1" src="../assets/icons/star.png" v-for="n in starRating">
@@ -288,36 +288,40 @@
 </template> 
 
 <script>
-  import ProductCarousel from '../components/ProductCarousel.vue'
-  import UserReviewCard from '../components/UserReview.vue'
-  export default {
-    components : {
-      ProductCarousel,
-      UserReviewCard
-    }, 
-    data(){
-     return({
-      starRating : 4,
-      peopleLike : 123,
-      selectableColors : {
-        light_blue : "#2596be",
-        black : "#141706",
-        gray : "#9e9e9e",
-        red : "#f00e0e",
-        dark_blue : "#0558f2",
-        yellow : "#f2f205",
-        purple : "#e600ff",
-        orange : "#ff5900",
-        green : "#00ff00"
-      },
-      selectableSize : {
-        extra_small : "XS",
-        small : "S",
-        medium : "M",
-        large : "L",
-        extra_large : "XL",
-      }
-     }) 
+    import ProductCarousel from '../components/ProductCarousel.vue'
+    import UserReviewCard from '../components/UserReview.vue'
+
+    export default {
+        components : {
+            ProductCarousel,
+            UserReviewCard
+        }, 
+        data(){
+            return({
+                productName : "",
+                productDescription : "",
+                productPrice : 0,
+                starRating : 4,
+                peopleLike : 123,
+                selectableColors : {
+                    light_blue : "#2596be",
+                    black : "#141706",
+                    gray : "#9e9e9e",
+                    red : "#f00e0e",
+                    dark_blue : "#0558f2",
+                    yellow : "#f2f205",
+                    purple : "#e600ff",
+                    orange : "#ff5900",
+                    green : "#00ff00"
+                },
+                selectableSize : {
+                    extra_small : "XS",
+                    small : "S",
+                    medium : "M",
+                    large : "L",
+                    extra_large : "XL",
+                }
+            }) 
+        }
     }
-  }
 </script>

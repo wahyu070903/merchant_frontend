@@ -1,5 +1,6 @@
 <template>
     <div class="w-[16rem] h-[22rem] bg-white flex flex-col rounded-lg drop-shadow-md">
+        <router-link to="/product">
         <div class="self-center w-[14rem] h-[12rem] mt-[1rem] relative">
             <img :src=getImageUrl(img_name) class="w-full h-full object-cover rounded-lg">
             <div class="w-6 h-6 absolute flex items-center justify-center top-[0.5rem] right-[0.5rem] bg-white rounded-full">
@@ -31,12 +32,13 @@
                 </div>
             </div>
         </div>
-
+    </router-link>
     </div>
 </template>
 <script>
     export default{
         props : {
+            id : Number,
             name : String,
             price : String,
             img_name : String,

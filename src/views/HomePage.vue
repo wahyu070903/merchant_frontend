@@ -31,15 +31,11 @@
                             </div>
                         </div>
                     </template>
-                    <ProductCard :img_name=item.image  :name=item.name price="80.0" class="w-[16em] h-[20em]"/>
+                    <ProductCard :id="item.id" :img_name=item.image :name=item.name price="80.0" class="w-[16em] h-[20em]"/>
                 </template>
-                
             </template>
         </div>
-        <div>
-            <video autoplay></video>
-        </div>
-    </div>    
+    </div> 
     <Footer />
 </template>
 <style>
